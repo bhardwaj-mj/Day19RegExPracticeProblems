@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     static Pattern firstName = Pattern.compile("^[A-Z][a-z]{2,}$");
     static Pattern lastName=Pattern.compile("^[A-Z][a-z]{2,}$");
-    static Pattern emailId=Pattern.compile("^[a-z]{3}[.]?[a-z]{0,3}[@][a-z]{2}[.][a-z]{2}[.]?[a-z]{0,2}$");
-
+    static Pattern emailId=Pattern.compile("^[a-z]{3,}[.]?[a-z]*@[a-zA-Z]{2,}[.][a-z]{2,}[.]?[a-z]{0,2}$");
+    static Pattern mobileNumber=Pattern.compile("^(91 )[0-9]{10}$");
     public static void main(String[] args) {
         Matcher matcher1 = firstName.matcher("Manoj");
         if (matcher1.matches())
@@ -19,10 +19,15 @@ public class UserRegistration {
             System.out.println(true);
         else
             System.out.println("Enter valid last name");
-        Matcher matcher3 = emailId.matcher("abc@bl.co");
+        Matcher matcher3 = emailId.matcher("abc.xyz@bridgelabz.co.in");
         if (matcher3.matches())
             System.out.println(true);
         else
             System.out.println("Enter valid email Id");
+        Matcher matcher4 = mobileNumber.matcher("91 9898989898");
+        if (matcher4.matches())
+            System.out.println(true);
+        else
+            System.out.println("Enter valid mobile number");
     }
 }
