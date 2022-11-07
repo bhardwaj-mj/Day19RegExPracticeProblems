@@ -4,13 +4,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-    static Pattern pattern = Pattern.compile("^[A-Z][a-z]{2,}$");
+    static Pattern firstName = Pattern.compile("^[A-Z][a-z]{2,}$");
+    static Pattern lastName=Pattern.compile("^[A-Z][a-z]{2,}$");
 
     public static void main(String[] args) {
-        Matcher matcher = pattern.matcher("Manoj");
-        if (matcher.matches())
+        Matcher matcher1 = firstName.matcher("Manoj");
+        if (matcher1.matches())
             System.out.println(true);
         else
-            System.out.println(false);
+            System.out.println("Enter valid first name");
+        Matcher matcher2 = lastName.matcher("Kumar");
+        if (matcher2.matches())
+            System.out.println(true);
+        else
+            System.out.println("Enter valid last name");
     }
 }
