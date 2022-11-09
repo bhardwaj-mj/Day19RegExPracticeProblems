@@ -8,7 +8,7 @@ public class UserRegistration {
     static Pattern lastName=Pattern.compile("^[A-Z][a-z]{2,}$");
     static Pattern emailId=Pattern.compile("^[a-z]{3,}[.]?[a-z]*@[a-zA-Z]{2,}[.][a-z]{2,}[.]?[a-z]{0,2}$");
     static Pattern mobileNumber=Pattern.compile("^(91 )[0-9]{10}$");
-    static Pattern password = Pattern.compile("^(?=.*[A-z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
+    static Pattern password = Pattern.compile("^(?=.*[A-z])(?=.*[0-9])(?=.+[~`!@#$%^&*_])[a-zA-Z0-9~`!@#$%^&*_]{8,}$");
     public static void main(String[] args) {
         Matcher matcher1 = firstName.matcher("Manoj");
         if (matcher1.matches())
@@ -30,7 +30,7 @@ public class UserRegistration {
             System.out.println(true);
         else
             System.out.println("Enter valid mobile number");
-        Matcher matcher5 = password.matcher("manojKumar1");
+        Matcher matcher5 = password.matcher("manoj@Kumar1");
         if (matcher5.matches())
             System.out.println(true);
         else
